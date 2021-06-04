@@ -8,8 +8,6 @@ function Nav(props) {
         setAboutSelected,
         portfolioSelected,
         setPortfolioSelected,
-        resumeSelected,
-        setResumeSelected,
     } = props;
 
     return (
@@ -23,23 +21,18 @@ function Nav(props) {
             <nav>
                 <ul className="flex-row">
                     <li className={`mx-2 ${aboutSelected && 'navActive'}`}>
-                        <span onClick={() => {setAboutSelected(true); setContactSelected(false); setPortfolioSelected(false); setResumeSelected(false)}}>
+                        <span onClick={() => {setAboutSelected(true); setContactSelected(false); setPortfolioSelected(false)}}>
                             About Me!
                         </span>
                     </li>
                     <li className={`mx-2 ${portfolioSelected && 'navActive'}`}>
-                        <span onClick={() => {setAboutSelected(false); setContactSelected(false); setPortfolioSelected(true); setResumeSelected(false)}}>
+                        <span onClick={() => {setAboutSelected(false); setContactSelected(false); setPortfolioSelected(true)}}>
                             Portfolio!
                         </span>
                     </li>
                     <li className={`mx-2 ${contactSelected && 'navActive'}`}>
-                        <span onClick={() => {setAboutSelected(false); setContactSelected(true); setPortfolioSelected(false); setResumeSelected(false)}}>
+                        <span onClick={() => {setAboutSelected(false); setContactSelected(true); setPortfolioSelected(false)}}>
                             Contact!
-                        </span>
-                    </li>
-                    <li className={`mx-2 ${resumeSelected && 'navActive'}`}>
-                        <span onClick={() => {setAboutSelected(false); setContactSelected(false); setPortfolioSelected(false); setResumeSelected(true)}}>
-                            Resume!
                         </span>
                     </li>
                 </ul>

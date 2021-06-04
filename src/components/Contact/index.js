@@ -8,11 +8,11 @@ function ContactForm() {
 
     function handleChange(e) {
         if (e.target.name === 'email') {
-            const valid = validateEmail(e.target.value);
-            console.log(valid);
-
-            if (!valid) {
-                setErrorMessage('Your email is invalid!');
+            const isValid = validateEmail(e.target.value);
+            console.log(isValid);
+            // isValid conditional statement
+            if (!isValid) {
+                setErrorMessage('Your email is invalid.');
             }
             else {
                 setErrorMessage('');
@@ -20,7 +20,7 @@ function ContactForm() {
         }
         else {
             if (!e.target.value.length) {
-                setErrorMessage(`${e.target.name} is required!`);
+                setErrorMessage(`${e.target.name} is required.`);
             } else {
                 setErrorMessage('');
             }
@@ -33,13 +33,17 @@ function ContactForm() {
         e.preventDefault();
         console.log(formState);
     }
-    return(
+    return (
         <section>
-            <h1>Contact Me!</h1>
+            <h1>Contact me</h1>
             <form id="contact-form" onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="name">Name:</label>
-                    <input type="text" defaultValue={email} name="email" onBlur={handleChange} />
+                    <input type="text" defaultValue={name} onBlur={handleChange} name="name" />
+                </div>
+                <div>
+                    <label htmlFor="email">Email address:</label>
+                    <input type="email" defaultValue={email} name="email" onBlur={handleChange} />
                 </div>
                 <div>
                     <label htmlFor="message">Message:</label>
@@ -48,10 +52,10 @@ function ContactForm() {
                 </div>
                 {errorMessage && (
                     <div>
-                        <p classname="error-text">{errorMessage}</p>
+                        <p className="error-text">{errorMessage}</p>
                     </div>
                 )}
-                <button type="submit">Submit!</button>
+                <button type="submit">Submit</button>
             </form>
         </section>
     )

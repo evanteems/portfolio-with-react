@@ -1,9 +1,9 @@
 import React from 'react';
-import Me from '../../assets/images/me.png';
+import Me from '../../assets/images/me.jpg';
 function About() {
     return(
-        <section classNmae="my-5">
-            <h1 id='about'> ABout Me! </h1>
+        <section className="my-3">
+            <h1 id='about'> About Me! </h1>
             <img src={Me}></img>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
